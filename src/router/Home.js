@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Movie from "../components/Movie.js";
 import { Link } from "react-router-dom";
+import styles from "../assets/Home.module.css";
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -28,16 +29,16 @@ function Home() {
         <h3>Loading...</h3>
       ) : (
         <div className="">
-          <nav className="wrapper__nav">
-            <div className="nav__logo">
+          <nav className={styles.wrapper__nav}>
+            <div className={styles.nav__logo}>
               <Link to="/">MOVIE</Link>
             </div>
-            <ul className="nav__menu">
+            <ul className={styles.nav__menu}>
               {movieGenres.map((genre) => (
-                <li key="genre">{genre}</li>
+                <li key={genre}>{genre}</li>
               ))}
             </ul>
-            <div className="nav__user">
+            <div className={styles.nav__user}>
               <span>LOGIN</span>
             </div>
           </nav>
