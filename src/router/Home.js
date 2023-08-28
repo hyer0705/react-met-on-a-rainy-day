@@ -25,17 +25,23 @@ function Home() {
       {loading ? (
         <h3>Loading...</h3>
       ) : (
-        <div className="wrapper__movies">
-          {movies.map((movie) => (
-            <Movie
-              key={movie.id}
-              id={movie.id}
-              coverImg={movie.medium_cover_image}
-              title={movie.title}
-              summary={movie.summary}
-              genres={movie.genres}
-            />
-          ))}
+        <div className="">
+          <div className="wrapper__nav">
+            <h3 className="nav__app-title">MOVIE</h3>
+            <span className="nav__login">LOGIN</span>
+          </div>
+          <div className="wrapper__movies">
+            {movies.map((movie) => (
+              <Movie
+                key={movie.id}
+                id={movie.id}
+                coverImg={movie.medium_cover_image}
+                title={movie.title}
+                summary={movie.summary}
+                genres={movie.genres}
+              />
+            ))}
+          </div>
         </div>
       )}
     </div>
