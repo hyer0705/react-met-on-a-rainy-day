@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import Movie from "../components/Movie.js";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
+  const movieGenres = ["Popular", "Action", "Animation", "Family", "Sci-Fi"];
 
   const getMovies = async () => {
     const res = await (
@@ -26,10 +28,19 @@ function Home() {
         <h3>Loading...</h3>
       ) : (
         <div className="">
-          <div className="wrapper__nav">
-            <h3 className="nav__app-title">MOVIE</h3>
-            <span className="nav__login">LOGIN</span>
-          </div>
+          <nav className="wrapper__nav">
+            <div className="nav__logo">
+              <Link to="/">MOVIE</Link>
+            </div>
+            <ul className="nav__menu">
+              {movieGenres.map((genre) => (
+                <li key="genre">{genre}</li>
+              ))}
+            </ul>
+            <div className="nav__user">
+              <span>LOGIN</span>
+            </div>
+          </nav>
           <div className="wrapper__movies">
             {movies.map((movie) => (
               <Movie
