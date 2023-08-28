@@ -42,18 +42,18 @@ function Home() {
               <span>LOGIN</span>
             </div>
           </nav>
-          <div className="wrapper__movies">
+          <section className={styles.wrapper__movies}>
             {movies.map((movie) => (
               <Movie
                 key={movie.id}
                 id={movie.id}
                 coverImg={movie.medium_cover_image}
                 title={movie.title}
-                summary={movie.summary}
+                year={movie.year}
                 genres={movie.genres}
               />
             ))}
-          </div>
+          </section>
         </div>
       )}
     </div>

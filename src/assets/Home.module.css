@@ -1,7 +1,7 @@
 :root {
-  --body-color: #02334a;
+  --body-color: #14471e;
   --text-color: #fff;
-  --hover-color: #c7aabc;
+  --hover-color: #ee9b01;
 }
 
 .wrapper__nav {
@@ -37,6 +37,20 @@
   cursor: pointer;
 }
 
+.wrapper__movies {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapper__movies {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 @media screen and (max-width: 700px) {
   .wrapper__nav {
     flex-direction: column;
@@ -53,5 +67,9 @@
     width: 100%;
     text-align: center;
     padding: 5px 10px;
+  }
+
+  .wrapper__movies {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
