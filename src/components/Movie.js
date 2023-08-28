@@ -1,9 +1,8 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import styles from "../assets/Movie.module.css";
 import { useState } from "react";
 
-function Movie({ id, coverImg, title, year, genres }) {
+function Movie({ coverImg, title, year, genres }) {
   const [isError, setIsError] = useState(false);
   const onError = () => {
     setIsError(true);
@@ -25,9 +24,7 @@ function Movie({ id, coverImg, title, year, genres }) {
       </div>
       <div className={styles.movie__info}>
         <h3 className={styles.movie__title} title={title}>
-          <Link to={`/movie/${id}`}>
-            {title.length > 20 ? title.slice(0, 20) + "..." : title}
-          </Link>
+          {title.length > 20 ? title.slice(0, 20) + "..." : title}
         </h3>
         <h4 className={styles.movie__year}>{year}</h4>
         <ul className={styles.movie__genres}>

@@ -45,6 +45,10 @@
   margin: 1rem;
 }
 
+.wrapper__movies a {
+  text-decoration: none;
+}
+
 @media screen and (max-width: 1200px) {
   .wrapper__movies {
     grid-template-columns: repeat(3, 1fr);

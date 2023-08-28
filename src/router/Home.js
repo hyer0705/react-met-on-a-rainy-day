@@ -44,14 +44,16 @@ function Home() {
           </nav>
           <section className={styles.wrapper__movies}>
             {movies.map((movie) => (
-              <Movie
-                key={movie.id}
-                id={movie.id}
-                coverImg={movie.medium_cover_image}
-                title={movie.title}
-                year={movie.year}
-                genres={movie.genres}
-              />
+              <Link to={`/movie/${movie.id}`}>
+                <Movie
+                  key={movie.id}
+                  id={movie.id}
+                  coverImg={movie.medium_cover_image}
+                  title={movie.title}
+                  year={movie.year}
+                  genres={movie.genres}
+                />
+              </Link>
             ))}
           </section>
         </div>
