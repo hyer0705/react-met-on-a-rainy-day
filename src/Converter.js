@@ -10,15 +10,17 @@ function Converter({ onChange, dollar, selectChange, coins, selectedCoin }) {
       <select onChange={selectChange}>
         {coins.map((coin) => (
           <option value={coin.id} key={coin.id}>
-            {coin.name} ({coin.symbol}): $ {coin.quotes.USD.price} USD [
-            {20 / coin.quotes.USD.price} ]
+            {coin.name} ({coin.symbol}): $ {coin.quotes.USD.price} USD
           </option>
         ))}
       </select>
       <div className="result">
-        {`${(dollar / selectedCoin.quotes.USD.price).toFixed(2)} (${
-          selectedCoin.symbol
-        })`}
+        <span>
+          Converted:
+          {` ${(dollar / selectedCoin.quotes.USD.price).toFixed(2)} (${
+            selectedCoin.symbol
+          })`}
+        </span>
       </div>
     </div>
   );
