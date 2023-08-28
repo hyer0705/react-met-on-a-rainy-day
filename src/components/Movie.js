@@ -1,21 +1,42 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import styles from "../assets/Movie.module.css";
+import { useState } from "react";
 
-function Movie({ id, coverImg, title, summary, genres }) {
+function Movie({ id, coverImg, title, year, genres }) {
+  const [isError, setIsError] = useState(false);
+  const onError = () => {
+    setIsError(true);
+  };
+
   return (
-    <div className="wrapper__movie">
-      <img className="movie__img" src={coverImg} alt={title} />
-
-      <h3 className="movie__title">
-        <Link to={`/movie/${id}`}>{title}</Link>
-      </h3>
-      <p className="movie__summary">{summary}</p>
-      <ul className="movie__genres">
-        {genres.map((g) => (
-          <li key={g}>{g}</li>
-        ))}
-      </ul>
-    </div>
+    <article className={`${styles.wrapper__movie} ${styles.item}`}>
+      <div className={styles.movie__imgbox}>
+        <img
+          className={styles.movie__img}
+          src={
+            isError
+              ? "https://placehold.co/230x345?text=movie-poster"
+              : coverImg
+          }
+          onError={onError}
+          alt={"영화 " + title + " 포스터"}
+        />
+      </div>
+      <div className={styles.movie__info}>
+        <h3 className={styles.movie__title} title={title}>
+          <Link to={`/movie/${id}`}>
+            {title.length > 20 ? title.slice(0, 20) + "..." : title}
+          </Link>
+        </h3>
+        <h4 className={styles.movie__year}>{year}</h4>
+        <ul className={styles.movie__genres}>
+          {genres.slice(0, 3).map((g, idx, arr) => (
+            <li key={g}>{idx !== arr.length - 1 ? `${g}, ` : g}</li>
+          ))}
+        </ul>
+      </div>
+    </article>
   );
 }
 
