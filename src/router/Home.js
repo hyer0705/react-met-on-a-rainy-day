@@ -28,7 +28,7 @@ function Home() {
       {loading ? (
         <h3>Loading...</h3>
       ) : (
-        <div className="">
+        <div>
           <NavBar />
           <section className={styles.wrapper__movies}>
             {movies.map((movie) => (
