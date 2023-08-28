@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.js": "/react-met-on-a-rainy-day/static/js/main.777314ed.js",
+    "main.css": "/react-met-on-a-rainy-day/static/css/main.cb6e8e9d.css",
+    "main.js": "/react-met-on-a-rainy-day/static/js/main.0fa24dbc.js",
     "index.html": "/react-met-on-a-rainy-day/index.html",
-    "main.777314ed.js.map": "/react-met-on-a-rainy-day/static/js/main.777314ed.js.map"
+    "main.cb6e8e9d.css.map": "/react-met-on-a-rainy-day/static/css/main.cb6e8e9d.css.map",
+    "main.0fa24dbc.js.map": "/react-met-on-a-rainy-day/static/js/main.0fa24dbc.js.map"
   },
   "entrypoints": [
-    "static/js/main.777314ed.js"
+    "static/css/main.cb6e8e9d.css",
+    "static/js/main.0fa24dbc.js"
   ]
 }
