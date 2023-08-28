@@ -5,9 +5,10 @@ function Movie({ coverImg, title, summary, genres }) {
   return (
     <div className="wrapper__movie">
       <img className="movie__img" src={coverImg} alt={title} />
-      <Link to="/movie">
-        <h3 className="movie__title">{title}</h3>
-      </Link>
+
+      <h3 className="movie__title">
+        <Link to="/movie">{title}</Link>
+      </h3>
       <p className="movie__summary">{summary}</p>
       <ul className="movie__genres">
         {genres.map((g) => (
