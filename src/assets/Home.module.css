@@ -1,0 +1,17 @@
+.wrapper__movies {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.wrapper__movies a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapper__movies {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
