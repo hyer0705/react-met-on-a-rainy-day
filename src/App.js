@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 function App() {
   const [loading, setLoading] = useState(true);
   const [coins, setCoins] = useState([]);
-  const [dollar, setDollar] = useState();
+  const [dollar, setDollar] = useState(0);
   const [selectedCoin, setSelectedCoin] = useState({});
 
   const getCoins = async () => {
@@ -44,13 +44,13 @@ function App() {
             {coins.map((coin) => (
               <option key={coin.id} value={coin.id}>
                 {coin.name} ({coin.symbol}){" "}
-                {`$ ${coin.quotes.USD.price.toFixed(2)}`}
+                {`$ ${coin.quotes.USD.price.toFixed(2)} USD`}
               </option>
             ))}
           </select>
           <h4>
             살 수 있는 코인:
-            {selectedCoin.id !== null
+            {selectedCoin.quotes !== undefined
               ? ` ${(dollar / selectedCoin.quotes.USD.price).toFixed(2)} ${
                   selectedCoin.symbol
                 }`
