@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function App() {
   const [toDo, setToDo] = useState("");
@@ -28,6 +28,12 @@ function App() {
         />
         <button>추가</button>
       </form>
+      <hr />
+      <ul>
+        {toDos.map((toDo, idx) => (
+          <li key={idx}>{toDo}</li>
+        ))}
+      </ul>
     </div>
   );
 }
